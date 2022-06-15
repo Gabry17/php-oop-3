@@ -1,5 +1,9 @@
 <?php
+require_once __DIR__ . "/info.php";
+
 class Product {
+    use Info;
+
     public $type;
     public $price;
     public $weight;

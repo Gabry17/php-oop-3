@@ -6,6 +6,8 @@ require_once __DIR__ . "/user.php";
 
 
 $croquette = new Food("cibo", 20, 200, 2, "Crocchette", "Salmone");
+$croquette->description = "Crocchette per gatti";
+$croquette->origin = "Italia";
 
 $ball = new Game("palla giocattolo", 5, 150, 2);
 $ball->available = false;
@@ -31,7 +33,7 @@ $gabriele->addRegistration("Gabriele", "Bianchi", "gabri@gmail.com");
 <body>
     <h2>Prodotti</h2>
     <ul>
-        <li><?php echo $croquette->productInfo() . " " . $croquette->notAvailable() ; ?></li>
+        <li><?php echo $croquette->productInfo() . " " . $croquette->notAvailable() . "<br>" . $croquette->addInfo() ; ?></li>
         <li><?php echo $ball->productInfo() . " " . $ball->notAvailable(); ?></li>
         <li><?php echo $collar->productInfo() . " " . $collar->notAvailable(); ?></li>
     </ul>
