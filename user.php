@@ -3,7 +3,6 @@ class User {
     public $name;
     public $surname;
     public $email;
-    public $cash = false;
     public $cart = [];
 
     //aggiungere prodotti al carrello
@@ -45,18 +44,6 @@ class User {
         }
 
         return $tot;
-    }
-
-    //Pagamento
-    public function pay(){
-        $payment = "";
-        if($this->cash){
-            $payment = "Il tuo ordine è andato a buon fine";
-        } else {
-            $payment = "Pagamento annullato";
-        }
-
-        return $payment;
     }
 }
 ?>

@@ -3,6 +3,7 @@ require_once __DIR__ . "/food.php";
 require_once __DIR__ . "/game.php";
 require_once __DIR__ . "/accessory.php";
 require_once __DIR__ . "/user.php";
+require_once __DIR__ . "/card.php";
 
 
 $croquette = new Food("cibo", 20, 200, 2, "Crocchette", "Salmone");
@@ -38,6 +39,8 @@ try {
 }
 
 $gabriele->addRegistration("Gabriele", "Bianchi", "gabri@gmail.com");
+
+$payment = new Card( 85893030938, "07/25" );
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +75,13 @@ $gabriele->addRegistration("Gabriele", "Bianchi", "gabri@gmail.com");
             <h3>Prezzo totale: <?php echo $gabriele->totalPrice();?>€</h3>
         </li>
         <li>
-            <h2><?php echo $gabriele->pay();?></h2>
+            <h2>
+                <?php if($payment->pay()){?>
+                    Pagamento effettuato
+                <?php } else { ?>
+                    Pagamento annullato
+                <?php } ?>
+            </h2>
         </li>
     </ul>
 
