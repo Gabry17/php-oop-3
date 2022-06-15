@@ -10,6 +10,8 @@ class User {
     public function addCart($product){
         if($product->available){
             $this->cart[] = $product;
+        } else {
+            throw new Exception("Al momento non e disponibile");
         }
     } 
 

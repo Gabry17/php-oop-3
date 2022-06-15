@@ -15,9 +15,27 @@ $ball->available = false;
 $collar = new Accessory("collare", 15, 50, 1);
 
 $gabriele = new User();
-$gabriele->addCart($ball);
-$gabriele->addCart($collar);
-$gabriele->addCart($croquette);
+
+try {
+    $gabriele->addCart($ball);
+   
+} catch (Exception $e) {
+    echo "error";
+}
+
+try {
+    $gabriele->addCart($collar);
+   
+} catch (Exception $e) {
+    echo "error";
+}
+
+try {
+    $gabriele->addCart($croquette);
+   
+} catch (Exception $e) {
+    echo "error";
+}
 
 $gabriele->addRegistration("Gabriele", "Bianchi", "gabri@gmail.com");
 ?>
